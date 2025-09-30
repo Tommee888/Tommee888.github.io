@@ -1,12 +1,53 @@
 <html>
-    <title>Free problemchild and r5</title>
-</html>
-<html>
+    <head>
+        <title>INDEX</title>
+    </head>
     <body>
-        <p><a href="./adventure.html">Adventure</a></p>
-        <p><a href="fave-five.html">Top 5</a></p>
-        <p><a href="form.html">Evil Form</a></p>
-        <p><a href="media..html">Media</a></p>
-        <p><a href="css.html">CSS</a></p>
+        
+        <div class="container">
+            <div class="links">
+                <a href="contact.html">Contact</a>
+                <a href="projects.html">Projects</a>
+                <a href="about.html">About</a>
+            </div>
+        </div>
+
+        <style>
+            * {
+                inset: 0;
+                margin: 0;
+                padding: 0;
+            }
+            .container {
+                width: 100dvw;
+                height: 100dvh;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+            .links {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                gap: .25rem;
+            }
+            .links a {
+                text-decoration: none;
+                background: white;
+                color: black;
+
+                border: 2px solid black;
+                border-radius: 1.5rem;
+                padding: .25rem;
+                padding-left: .35rem;
+                padding-right: .35rem;
+                width: 312px;
+            }
+            body {
+                background: black;
+            }
+        </style>
     </body>
 </html>
