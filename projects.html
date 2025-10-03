@@ -1,18 +1,71 @@
 <html>
-    <title>Free problemchild and r5</title>
+    <title>PROJECTS</title>
 </html>
 <html>
-    <body>
-        <p><a href="./adventure/adventure.html">Adventure</a></p>
-        <p><a href="fave-five.html">Top 5</a></p>
-        <p><a href="./media/media..html">Media</a></p>
-        <p><a href="css.html">CSS</a></p>
-        <p><a href="index.html">Prettify Pages</a></p>
+<body>
+
+     <div class="container">
+          <p class="tagline">
+            The Projects
+          </p>
+            <div class="links">
+                <a href="./adventure/adventure.html">Adventure</a>
+                <a href="fave-five.html">Top 5</a>
+                <a href="./media/media..html">Media</a>
+                <a href="css.html">CSS</a>
+            </div>
+        </div>
 
         <style>
-            body {
-                background: lavender;
+            * {
+                inset: 0;
+                margin: 0;
+                padding: 0;
             }
+
+            body {
+                background: black;
+            }
+
+            p {
+                color: pink;
+                font-size: xx-large;
+            }
+
+            .tagline {
+                margin-bottom: 3rem;
+            }
+
+            .container {
+                width: 100dvw;
+                height: 100dvh;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .links {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                gap: .25rem;
+            }
+
+            .links a {
+                text-decoration: none;
+                background: lavender;
+                color: black;
+
+                border: 2px solid black;
+                border-radius: 1.5rem;
+                padding: .25rem;
+                padding-left: .35rem;
+                padding-right: .35rem;
+                width: 312px;
+            }
+
         </style>
     </body>
 </html>

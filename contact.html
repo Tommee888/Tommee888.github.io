@@ -3,12 +3,95 @@
         <title>Evil Form</title>
     </head>
     <body>
-        <form target="_blank" method="post" action="https://script.google.com/macros/s/AKfycbzgwfh1eENdw1EcNpXLLugRn571393-2s6rgoezereowMHtF6kUo4Q-9SdKuyM6r5Xz/exec">
-            <p></p>
-            <p><input name="name" required type="text"  placeholder="name"></p>
-            <p><input name="email" required type="email"  placeholder="email"></p>
-            <p><textarea name="comment" required placeholder="comment"></textarea></p>
-            <p><input type="submit"></p>
-        </form>
+        <div class="container">
+            <h1><u>Contact</u></h1>        
+            <form target="_blank" method="post" action="https://script.google.com/macros/s/AKfycbzgwfh1eENdw1EcNpXLLugRn571393-2s6rgoezereowMHtF6kUo4Q-9SdKuyM6r5Xz/exec">
+                <input name="name" required type="text"  placeholder="Name">
+                <input name="email" required type="email"  placeholder="Email *">
+                <input type="tel" placeholder="Phone number">
+                <textarea name="comment" required placeholder="Comment"></textarea>
+                <input type="submit" value="Send">
+            </form>
+        </div>
+
+        <style>
+
+            * {
+                inset: 0;
+                margin: 0;
+                padding: 0;
+            }
+
+            body {
+                background: black;
+            }
+
+            .container {
+                width : 100dvw;
+                height: 100dvh;
+                display: flex;
+                flex-direction : column;
+                justify-content: center;
+                align-items    : center;
+            }
+
+            h1 {
+                color: pink;
+                margin-bottom: 3rem;
+            }
+
+            form {
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr 1fr;
+                grid-template-rows   : 1fr 1fr 2fr 1fr;
+                gap: 1rem;                
+            }
+
+            form * {
+                font-size: 1.25rem;
+                padding: calc(.5rem + 1px);
+                background: black;
+                color: lavender;
+                border: 1px solid pink;
+            }
+
+            form input:hover {
+                border: 2px solid lavender;
+                padding: calc(.5rem + 0px);
+            }
+
+            form textarea:hover {
+                border: 2px solid lavender;
+            }
+
+            input[name=name] {
+                grid-column: span 2;                
+            }
+
+            input[name=email] {
+                grid-column: span 2;
+            }
+
+            input[type=tel] {
+                grid-column: span 4;
+            }
+
+            textarea[name=comment] {
+                grid-column: span 4;
+                font-family: sans-serif;
+            }
+
+            input[type=submit] {
+                background: black;
+                color: lavender;
+            }
+
+            input[type=submit]:hover {
+                background: lavender;
+                color: black;
+                cursor: pointer;
+            }
+            
+        </style>
     </body>
 </html>
