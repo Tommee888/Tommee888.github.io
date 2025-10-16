@@ -1,0 +1,53 @@
+<html>
+    <title>CONSOLE</title>
+    <body>
+        <script>
+            console.log("Hello Javascript!")
+
+            let myNumber = 42;
+            let myString = "Hello, World";
+            let myBoolean = true;
+            let myArray = [1,2,3];
+
+            let myUndefined = undefined;
+            let myObject = {
+                fname: "John",
+                lname: "Doe",
+                age: 30,
+                isStudent: true,
+            }
+
+            function greet(name) {
+                let greeting = "Hello, " + name + "!";
+                console.log(greeting)
+            }
+
+            let name = prompt("What is your name?")?.trim();
+            if (name) {
+                console.log('Hello, ${name}!');
+            }   else {
+                alert("That is not a valid name. Game over.")
+            }
+
+            function ask(message, hint="Please enter a valid response") {
+            let response = prompt(message)?.trim();
+            if (!response) {
+                alert(hint);
+                return ask(message);
+            }
+            return response;
+          }
+
+            let name = ask("What is your name?"); {
+            if (name === "Evil Alien") 
+            }
+            let quest = ask("What is your quest?"); {
+            if (quest === "To seek the glorp") 
+            }
+            let color = ask("What is your favorite color?"); {
+            if (color === "green")
+            }
+
+        </script>
+    </body>
+</html>
