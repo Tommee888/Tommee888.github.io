@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <title>SPLIT</title>
+    </head>
+    <body>
+        <script>
+
+             'myString' = "Hello World";
+
+            let myString = myString.split("o");
+            let myTrimmedString = myString.trim();
+            let myLowercaseString = myString.toLowerCase();
+            let helloWorld = myString.replace("Hello", "Bro")
+
+            console.log(myStrings);
+            console.log(myTrimmedString);
+            console.log(myLowercaseString);
+            console.log(helloWorlds);
+
+            //suedo
+            let attempts = 5
+
+            let myNumber = Math.random(Math.random() * 100)
+
+            //ask user for number
+            let theirNumber = Number.parseInt(prompt("Guess my number!"))
+
+            //while the user's guess in incorrect
+            while (attempt > 0 && myNumber !== theirNumber) {
+                if (myNumber < theirNumber) {
+                    alert("You're number is too high, try again!")
+                }   else {
+                    alert("You're number is too low,try again!")
+                }
+
+                attempt -=1
+                theirNumber = Number.parseInt(prompt("Guess my number!"))
+            }
+
+           
+
+            //if user is correct, congrats
+            alert("You guessed my number!")
+
+        </script>
+    </body>
+</html>

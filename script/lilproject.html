@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <title>SLATT</title>
+    </head>
+    <body> 
+        <script>
+            // smeantic parsing
+            //1. remember our name
+            //2. check the weather
+            //3. check the time
+
+            let userName = ""
+
+            while (!userName) {
+                userName = prompt("Please identify")?.trim()
+
+                if(!userName) {
+                    alert("Please submit a valid identifier.")
+                }
+            }
+
+            let command = ""
+
+            while (!command) {
+                command = prompt("Please input your command")?.trim()?.toLowerCase
+            }
+
+            if (command.includes("name")) {
+                //set username
+                do {
+                    userName = prompt("Please Identify")?.trim()
+
+                    if(!userName) {
+                        alert("Please submit a valid identifier")
+                    }
+                } while (!userName)
+                alert("")
+            }
+
+            
+        </script>
+    </body>
+</html>
