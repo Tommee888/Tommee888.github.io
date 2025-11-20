@@ -1,0 +1,100 @@
+<html>
+    <head>
+        <title>TODO</title>
+    </head>
+    <body>
+        <h1>To Do List</h1>
+        <ol id="todo"></ol>
+        <input type="text" id="description">
+        <button id="add">Add Item</button>
+
+        <script>
+            const todo = document.getElementById("todo")
+            const add = document.getElementById("add")
+            const description = document.getElementById("description")
+
+            function newItem(desc) {
+                const li = document.createElement("li")
+                const cb = document.createElement("input")
+                const text = document.createElement("span")
+
+                cb.type = "checkbox"
+                text.innerText = desc
+
+                cb.addEventListener("change", () {
+                    if (cb.checked) {
+                        todo.removeChild(li)
+                    }
+                })
+
+                li.appendChild(cb)
+                li.appendChild(text)
+                return li
+            }
+
+            function addItem() {
+                const text = description.value.trim()
+                if (!text) return
+                description.value = ""
+                todo.appendChild(newItem(text))
+            }
+
+            add.onclick = addItem
+
+            
+        </script>
+        <style>
+            body {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                height: 100vh;
+                margin: 0;
+                background-color: white;
+            }
+
+            h1 {
+                margin-bottom: 20px;
+            }
+
+            #todo {
+                list-style: none;
+                padding: 0;
+                width: 300px;
+            }
+
+            li {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                background: black;
+                padding: 10px;
+                margin-bottom: 10px;
+                border-radius: 5px;
+                box-shadow: 0 1px 3px black;
+            }
+
+            input[type="text"] {
+                width: 200px;
+                padding: 8px;
+                border: 1px solid black;
+                border-radius: 4px;
+            }
+
+            button {
+                padding: 8px 12px;
+                margin-left: 10px;
+                border: none;
+                background-color: red;
+                color: white;
+                border-radius: 4px;
+                cursor: pointer;
+            }
+
+            button:hover {
+                background-color: red;
+            }
+        </style>
+    </body>
+</html>
