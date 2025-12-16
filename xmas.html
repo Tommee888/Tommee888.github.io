@@ -1,0 +1,154 @@
+<html>
+    <head>
+        <title>XMAS</title>
+    </head>
+
+        <style>
+            body {
+                margin: 0;
+                height: 100dvh;
+                overflow: hidden;
+                background: linear-gradient(lightblue, white);
+            }
+
+            body.night {
+                background: linear-gradient(#0b1d3a, #1c3b6f);
+            }
+
+            .button {
+                position: absolute;
+                top: 20px;
+                right: 20px;
+                padding: 12px 18px;
+                border: solid 2px;
+                border-radius: 6px;
+                cursor: pointer;
+                font-size: 16px;
+                background-color: lightblue;
+                color: black;
+                border-radius: 10px;
+                overflow: hidden;
+            }
+
+            body.night .button {
+                border: solid 2px #1c3b6f;
+                background-color: #0b1d3a;
+                color: white;
+
+            }
+
+
+            .snowflake {
+                position: fixed;
+                top: -10px;
+                color: white;
+                user-select: none;
+                animation-name: fall;
+                animation-timing-function: linear;
+                animation-iteration-count: infinite;
+            }
+
+            @keyframes fall {
+                to {
+                    transform: translateY(100vh);
+                }
+            }
+
+            .letter {
+                position: absolute;
+                bottom: 40px;
+                left: 40px;
+                padding: 20px;
+                width: 300px;
+                background: linear-gradient(#fffaf0, #f3e6c8);
+                border: 2px solid black;
+                box-shadow: 0 10px 25px lightskyblue;
+                border-style: inset;
+                transform: scaleY(0);
+                transform-origin: bottom;
+                transition: transform 0.6s ease;
+                font-family: cursive;
+            }
+
+            body.night .letter {
+                color: black;
+                background-color: #0b1d3a;
+            }
+
+            .letter.container {
+                position: absolute;
+                bottom: 40px;
+                left: 40px;
+            }
+
+            .letter-button {
+                position: absolute;
+                bottom: 340px;
+                left: 160px;
+                border-radius: 10px;
+                overflow: hidden;
+                background-color: white;
+                color: black;
+            }
+
+            body.night .letter-button {
+                color: white;
+                background-color: #1c3b6f;
+            }
+
+            .letter.open {
+            transform: scaleY(1);
+            }
+
+        </style>
+
+        <body>
+            <button class="button" onclick="toggleNight()">Toggle Christmas Day / Christmas Night</button>
+
+        <div class="letter-container">
+            <button class="letter-button" onclick="toggleLetter()">Open Letter</button>
+
+            <div class="letter">
+            <h1>Dear Santa,</h1>
+                <p>This is what I would want this year.</p>
+                <ul>
+                <li>Edifier MR3 Studio Speakers</li>
+                <li>Yamaha MG10XU Audio Mixer</li>
+                <li>Resident Evil Typewriter</li>
+                </ul>
+                <p>Listen to my message, Slatt</p>
+            </div>
+        </div>
+        </body>
+
+        <script>
+            //night
+            function toggleNight() {
+            document.body.classList.toggle("night");
+         }
+
+            function createSnowflake() {
+            const snowflake = document.createElement("div");
+            snowflake.classList.add("snowflake");
+            snowflake.textContent = "❄️";
+
+            snowflake.style.left = Math.random() * window.innerWidth + "px";
+            snowflake.style.fontSize = Math.random() * 10 + 10 + "px";
+            snowflake.style.animationDuration = Math.random() * 3 + 2 + "s";
+
+            document.body.appendChild(snowflake);
+
+            setTimeout(() => {
+                snowflake.remove();
+            }, 5000);
+        }
+
+        //letter button
+        function toggleLetter() {
+        const letter = document.querySelector(".letter");
+        letter.classList.toggle("open");
+        }
+
+        setInterval(createSnowflake, 150);
+        </script>
+</html>

@@ -1,0 +1,152 @@
+<html>
+    <head>
+        <title>CHECKERS</title>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Checkers</h1>
+            <div class="board">
+                <a id="a1"></a>
+                <a id="a2"></a>
+                <a id="a3"></a>
+                <a id="a4"></a>
+                <a id="a5"></a>
+                <a id="a6"></a>
+                <a id="a7"></a>
+                <a id="a8"></a>
+
+                <a id="b1"></a>
+                <a id="b2"></a>
+                <a id="b3"></a>
+                <a id="b4"></a>
+                <a id="b5"></a>
+                <a id="b6"></a>
+                <a id="b7"></a>
+                <a id="b8"></a>
+
+                <a id="c1"></a>
+                <a id="c2"></a>
+                <a id="c3"></a>
+                <a id="c4"></a>
+                <a id="c5"></a>
+                <a id="c6"></a>
+                <a id="c7"></a>
+                <a id="c8"></a>
+
+                <a id="d1"></a>
+                <a id="d2"></a>
+                <a id="d3"></a>
+                <a id="d4"></a>
+                <a id="a5"></a>
+                <a id="d6"></a>
+                <a id="d7"></a>
+                <a id="d8"></a>
+
+                <a id="e1"></a>
+                <a id="e2"></a>
+                <a id="e3"></a>
+                <a id="e4"></a>
+                <a id="e5"></a>
+                <a id="e6"></a>
+                <a id="e7"></a>
+                <a id="e8"></a>
+
+                <a id="f1"></a>
+                <a id="f2"></a>
+                <a id="f3"></a>
+                <a id="f4"></a>
+                <a id="f5"></a>
+                <a id="f6"></a>
+                <a id="f7"></a>
+                <a id="f8"></a>
+
+                <a id="g1"></a>
+                <a id="g2"></a>
+                <a id="g3"></a>
+                <a id="g4"></a>
+                <a id="g5"></a>
+                <a id="g6"></a>
+                <a id="g7"></a>
+                <a id="g8"></a>
+
+                <a id="h1"></a>
+                <a id="h2"></a>
+                <a id="h3"></a>
+                <a id="h4"></a>
+                <a id="h5"></a>
+                <a id="h6"></a>
+                <a id="h7"></a>
+                <a id="h8"></a>
+            </div>
+        </div>
+
+        <style>
+            * {
+                inset: 0;
+                margin: 0;
+                padding: 0;
+            }
+
+            body {
+                background: black;
+            }
+
+            .container {
+                width: 100dvw;
+                height: 100dvh;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .board {
+                display: grid;
+                width: fit-content;
+                height: fit-content;
+                grid-column: repeat(8, 1fr);
+                border: white 2px solid;
+                box-shadow: pink 4px 4px;
+            }
+        </style>
+
+        <script>
+            const board = document.getElementById("board");
+
+            board.style.display = "grid";
+            board.style.width = "fit-content"
+            board.style.height = "fit-content"
+            board.style.gridTemplateColumns = "repeat(8, 1fr)"
+
+            function Square {
+                const square = document.createElement("div");
+                square.style.width = "72px";
+                square.style.height = "72px";
+                square.style.border = "1px solid black";
+                if ((file + rank) & 1) {
+                    square.style.background = "#000"
+                } else {
+                    square.style.background = "#fff"
+                }
+                return square;
+            }
+
+            for (let rank = 0; rank < 8; rank ++) {
+                for (let file = 0; file < 8; file ++){
+                board.appendChild(Square(file, rank))
+            }
+            }
+
+            function Piece() {
+                const piece = document.createElement("div")
+                piece.style.width = "72px"
+                piece.style.height = "72px"
+                piece.style.fontSize = "60px"
+                piece.style.textAlign = "center"
+                piece.style.color = 
+                piece.style.cursor = 
+                piece.style.
+            }
+        </script>
+    </body>
+</html>
