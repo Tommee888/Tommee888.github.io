@@ -1,0 +1,97 @@
+<html>
+    <head>
+        <title>todolist</title>
+    <head>
+            <style>
+                body {
+                background: black;
+                display: flex;
+                justify-content: center;
+                margin-top: 50px;
+                }
+
+                .todo-container {
+                background: white;
+                padding: 20px;
+                width: 700px;
+                border-radius: 6px;
+                box-shadow: 0 0 10px white;
+                }
+
+                input {
+                width: 75%;
+                padding: 8px;
+                }
+
+                button {
+                padding: 8px;
+                cursor: pointer;
+                }
+
+                ul {
+                list-style: none;
+                padding: 0;
+                margin-top: 20px;
+                }
+
+                li {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 8px 0;
+                border-bottom: 1px solid white;
+                }
+
+                li.completed span {
+                text-decoration: line-through;
+                color: gray;
+                }
+
+                li span {
+                cursor: pointer;
+                flex-grow: 1;
+                }
+
+                .delete {
+                color: red;
+                margin-left: 400px;
+                cursor: pointer;
+                }
+            </style>
+    <body>
+
+        <div class="todo-container">
+            <h2>TO DO LIST</h2>
+            <input id="todoInput" type="text" placeholder="New task..." />
+            <button onclick="addTodo()">Add</button>
+
+            <ul id="todoList"></ul>
+        </div>
+
+        <script>
+            function addTodo() {
+            const input = document.getElementById("todoInput");
+            const text = input.value.trim();
+
+            if (text === "") return;
+
+            const li = document.createElement("li");
+
+            const span = document.createElement("span");
+            span.textContent = text;
+            span.onclick = () => li.classList.toggle("completed");
+
+            const del = document.createElement("span");
+            del.textContent = "UNDO";
+            del.className = "delete";
+            del.onclick = () => li.remove();
+
+            li.appendChild(span);
+            li.appendChild(del);
+
+            document.getElementById("todoList").appendChild(li);
+            input.value = "";
+            }
+        </script>
+    </body>
+</html>

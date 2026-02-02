@@ -1,0 +1,36 @@
+<html>
+  <head>
+    <title>PROJECT1</title>
+  </head>
+  <body>
+    <script>
+      document.body.style.height = "100vh";
+      document.body.style.margin = "0px"
+
+      let clicks = 0;
+
+      const rect = document.createElement("div");
+      rect.style.position = "absolute";
+      rect.style.width = "30px";
+      rect.style.height = "10px";
+      rect.style.backgroundColor = "red";
+
+      document.body.appendChild(rect);
+
+      function onClick(event) {
+        clicks = clicks + 1;
+        console.log("Mouse was clicked", clicks, "times!");
+
+        rect.style.left = event.clientX + "px";
+        rect.style.top = event.clientY + "px";
+      }
+
+      document.body.onclick = onClick;
+    </script>
+    <style>
+        body {
+            background-color: black;
+        }
+    </style>
+  </body>
+</html>
