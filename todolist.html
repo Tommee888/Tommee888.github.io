@@ -51,6 +51,8 @@
                 cursor: pointer;
                 flex-grow: 1;
                 }
+                /* takes remaining space */
+                
 
                 .delete {
                 color: red;
@@ -69,6 +71,7 @@
         </div>
 
         <script>
+            // runs add button
             function addTodo() {
             const input = document.getElementById("todoInput");
             const text = input.value.trim();
@@ -76,21 +79,26 @@
             if (text === "") return;
 
             const li = document.createElement("li");
+            // creates list
 
             const span = document.createElement("span");
             span.textContent = text;
             span.onclick = () => li.classList.toggle("completed");
+            // triggers line through
 
             const del = document.createElement("span");
             del.textContent = "UNDO";
             del.className = "delete";
             del.onclick = () => li.remove();
+            // removes task completely
 
-            li.appendChild(span);
-            li.appendChild(del);
+            li.appendChild(span);// adds text
+            li.appendChild(del);// adds delete button
 
             document.getElementById("todoList").appendChild(li);
+            //adds li to ul
             input.value = "";
+            // resets input box
             }
         </script>
     </body>
