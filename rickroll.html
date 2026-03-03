@@ -1,0 +1,75 @@
+<html>
+    <head>
+        <title>BUTTON</title>
+    </head>
+    <body>
+        <h1>Nothing-96% <br>
+            Rick Comes-4%</h1>
+
+        <button onclick="roll()">ROLL</button>
+
+        <div id ="result"></div>
+
+        <style>
+            h1 {
+                margin-top: 150px;
+            }
+
+            body {
+                background: rgb(81, 81, 81);
+                color: white;
+                text-align: center;
+                font-family: sans-serif;
+                padding-top: 80px;
+            }
+
+            button {
+                margin-top: 90px;
+                width: 200px;
+                height: 200px;
+                border-radius: 50%;
+                font-size: 50px;
+                cursor: pointer;
+                background: black;
+                color: white;
+                border: none;
+                transition: 0.2s;
+            }
+            
+            button:hover{
+                background: white;
+                color: black;
+                transform: scale(1.05)
+            }
+
+            #result {
+                margin-top: 50px;
+                font-size: 40px;
+            }
+        </style>
+
+        <script>
+            function roll() {
+                //chooses number
+                const randomnumber = Math.random();
+                const resultDiv =document.getElementById("result")
+
+                //runs rick roll
+                if (randomnumber < 0.04) {
+                    resultDiv.innerHTML = "RICK ROLLED"
+
+                    //redirects to rick roll instantly
+                    setTimeout(() => {
+                        window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ&list=RDdQw4w9WgXcQ&start_radio=1"
+                    }, 1);
+
+                } else {
+                    // you lose screen
+                    resultDiv.innerHTML = "UNLUCKY"
+                    document.body.style.background = "darkred"
+                }
+            }
+
+        </script>
+    </body>
+</html>
